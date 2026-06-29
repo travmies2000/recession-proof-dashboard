@@ -22,12 +22,11 @@ body {
     max-width: 450px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 h1, h2 { font-weight: 600; letter-spacing: -0.5px; margin-bottom: 20px; }
 
-input {
+input[type="number"], input[type="text"] {
     width: 100%;
     padding: 12px;
     margin-bottom: 10px;
@@ -38,9 +37,9 @@ input {
     box-sizing: border-box;
 }
 
-#results, #spending-tracker { margin-top: 25px; width: 100%; }
+#results, #spending-tracker, #household-audit { margin-top: 25px; width: 100%; }
 
-p { padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); display: flex; justify-content: space-between; }
+p { padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); display: flex; justify-content: space-between; align-items: center; }
 
 #fortification-box { color: #d4af37; font-weight: 600; }
 
@@ -56,5 +55,5 @@ button {
     margin-top: 10px;
 }
 
-#item-list { list-style: none; padding: 0; margin-top: 20px; width: 100%; }
+#item-list { list-style: none; padding: 0; margin-top: 20px; }
 #item-list li { padding: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.9rem; }

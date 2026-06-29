@@ -10,7 +10,9 @@
 <body>
     <div class="container">
         <h1>Financial Fortress</h1>
+        
         <section id="budget-calculator">
+            <h2>50/30/20 Budget</h2>
             <input type="number" id="income" placeholder="Enter Monthly Income">
             <canvas id="budgetChart"></canvas>
             <div id="results">
@@ -19,6 +21,14 @@
                 <p id="fortification-box">Fortification (20%): <span id="fortification">0</span></p>
             </div>
             <button id="export-btn" onclick="exportSummary()">Download Summary</button>
+        </section>
+
+        <section id="spending-tracker">
+            <h2>30-Day Spending Freeze</h2>
+            <input type="text" id="item-name" placeholder="Item Name">
+            <input type="number" id="item-cost" placeholder="Cost">
+            <button onclick="addItem()">Track Item</button>
+            <ul id="item-list"></ul>
         </section>
     </div>
     <script src="script.js"></script>

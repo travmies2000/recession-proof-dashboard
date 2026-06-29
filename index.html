@@ -1,27 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Fortress Dashboard</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Financial Fortress</h1>
-        
-        <section id="budget-calculator">
-            <h2>50/30/20 Budget</h2>
-            <input type="number" id="income" placeholder="Enter Monthly Income">
-            <button onclick="calculateBudget()">Calculate</button>
-            
-            <div id="results">
-                <p>Survival (50%): <span id="survival">0</span></p>
-                <p>Comforts (30%): <span id="comforts">0</span></p>
-                <p id="fortification-box">Fortification (20%): <span id="fortification">0</span></p>
-            </div>
-        </section>
-    </div>
-    <script src="script.js"></script>
-</body>
-</html>
+<!-- Inside <section id="budget-calculator"> -->
+<input type="number" id="income" placeholder="Enter Monthly Income" oninput="updateDashboard()">
+
+<div class="chart-container" style="position: relative; height:200px; width:200px; margin: auto;">
+    <canvas id="budgetChart"></canvas>
+</div>
+
+<div id="results">
+    <p class="tooltip">Survival (50%): <span id="survival">0</span>
+        <span class="tooltiptext">Essential costs: Housing, food, utilities, transport.</span>
+    </p>
+    <p class="tooltip">Comforts (30%): <span id="comforts">0</span>
+        <span class="tooltiptext">Variable lifestyle costs: Dining, hobbies, subscriptions.</span>
+    </p>
+    <p id="fortification-box" class="tooltip">Fortification (20%): <span id="fortification">0</span>
+        <span class="tooltiptext">Wealth building: Debt repayment, savings, investments.</span>
+    </p>
+</div>

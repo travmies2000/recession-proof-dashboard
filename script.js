@@ -7,23 +7,21 @@ window.onload = () => {
         incomeInput.value = savedIncome;
         updateDashboard(savedIncome);
     }
+    renderItems();
 };
 
 incomeInput.addEventListener('input', (e) => {
-    const value = e.target.value;
-    localStorage.setItem('monthlyIncome', value);
-    updateDashboard(value);
+    localStorage.setItem('monthlyIncome', e.target.value);
+    updateDashboard(e.target.value);
 });
 
 function updateDashboard(income) {
     const survival = income * 0.50;
     const comforts = income * 0.30;
     const fortification = income * 0.20;
-
     document.getElementById('survival').innerText = survival.toFixed(2);
     document.getElementById('comforts').innerText = comforts.toFixed(2);
     document.getElementById('fortification').innerText = fortification.toFixed(2);
-
     updateChart([survival, comforts, fortification]);
 }
 
@@ -40,11 +38,27 @@ function updateChart(data) {
     });
 }
 
+function addItem() {
+    const name = document.getElementById('item-name').value;
+    const cost = document.getElementById('item-cost').value;
+    if (!name || !cost) return;
+    const items = JSON.parse(localStorage.getItem('spendingItems') || '[]');
+    items.push({ name, cost });
+    localStorage.setItem('spendingItems', JSON.stringify(items));
+    renderItems();
+}
+
+function renderItems() {
+    const list = document.getElementById('item-list');
+    const items = JSON.parse(localStorage.getItem('spendingItems') || '[]');
+    list.innerHTML = items.map(i => `<li>${i.name} - $${i.cost} (Review in 30 days)</li>`).join('');
+}
+
 function exportSummary() {
-    const data = `Survival: ${document.getElementById('survival').innerText}\nComforts: ${document.getElementById('comforts').innerText}\nFortification: ${document.getElementById('fortification').innerText}`;
+    const data = `Financial Summary:\nSurvival: ${document.getElementById('survival').innerText}\nComforts: ${document.getElementById('comforts').innerText}\nFortification: ${document.getElementById('fortification').innerText}`;
     const blob = new Blob([data], { type: 'text/plain' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = 'Financial_Fortress_Summary.txt';
+    link.download = 'Financial_Summary.txt';
     link.click();
 }

@@ -51,7 +51,7 @@ function addItem() {
 function renderItems() {
     const list = document.getElementById('item-list');
     const items = JSON.parse(localStorage.getItem('spendingItems') || '[]');
-    list.innerHTML = items.map(i => `<li>${i.name} - $${i.cost} (Review in 30 days)</li>`).join('');
+    list.innerHTML = items.map(i => `<li>${i.name} - $${i.cost}</li>`).join('');
 }
 
 function exportSummary() {

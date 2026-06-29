@@ -1,14 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
 body {
-    font-family: sans-serif;
-    background-color: #f4f4f9;
-    color: #2c3e50;
-    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    /* Navy background base */
+    background: linear-gradient(135deg, #2c3e50, #1a252f);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }
+
 .container {
-    max-width: 600px;
-    margin: auto;
-    background: #ffffff;
-    padding: 20px;
+    /* Glassmorphism: Translucent slate/blur effect */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    width: 100%;
+    max-width: 450px;
+}
+
+h1, h2 {
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #d4af37; /* Gold for professional emphasis */
+    color: #1a252f;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #c5a02e;
+}
+
+#results {
+    margin-top: 25px;
+}
+
+.result-item, p {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Specific Gold Highlight for Fortification */
+#fortification-box {
+    color: #d4af37;
+    font-weight: 600;
 }

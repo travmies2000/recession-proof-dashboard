@@ -10,18 +10,15 @@
 <body>
     <div class="container">
         <h1>Financial Fortress</h1>
-        
         <section id="budget-calculator">
-            <h2>50/30/20 Budget</h2>
             <input type="number" id="income" placeholder="Enter Monthly Income">
-            
-            <canvas id="budgetChart" width="200" height="200"></canvas>
-            
+            <canvas id="budgetChart"></canvas>
             <div id="results">
-                <p>Survival (50%): <span id="survival">0</span> <span class="tooltip" title="Needs: Rent, food, utilities">ℹ️</span></p>
-                <p>Comforts (30%): <span id="comforts">0</span> <span class="tooltip" title="Wants: Entertainment, dining out">ℹ️</span></p>
-                <p id="fortification-box">Fortification (20%): <span id="fortification">0</span> <span class="tooltip" title="Savings & Investments">ℹ️</span></p>
+                <p>Survival (50%): <span id="survival">0</span></p>
+                <p>Comforts (30%): <span id="comforts">0</span></p>
+                <p id="fortification-box">Fortification (20%): <span id="fortification">0</span></p>
             </div>
+            <button id="export-btn" onclick="exportSummary()">Download Summary</button>
         </section>
     </div>
     <script src="script.js"></script>

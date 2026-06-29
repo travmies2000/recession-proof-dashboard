@@ -39,3 +39,12 @@ function updateChart(data) {
         options: { plugins: { legend: { display: false } } }
     });
 }
+
+function exportSummary() {
+    const data = `Survival: ${document.getElementById('survival').innerText}\nComforts: ${document.getElementById('comforts').innerText}\nFortification: ${document.getElementById('fortification').innerText}`;
+    const blob = new Blob([data], { type: 'text/plain' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'Financial_Fortress_Summary.txt';
+    link.click();
+}

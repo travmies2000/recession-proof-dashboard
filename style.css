@@ -14,7 +14,6 @@ body {
 .container {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 40px;
     border-radius: 20px;
@@ -26,12 +25,12 @@ body {
     align-items: center;
 }
 
-h1 { font-weight: 600; letter-spacing: -0.5px; margin-bottom: 20px; }
+h1, h2 { font-weight: 600; letter-spacing: -0.5px; margin-bottom: 20px; }
 
 input {
     width: 100%;
     padding: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     border-radius: 8px;
     border: none;
     background: rgba(255, 255, 255, 0.1);
@@ -39,22 +38,23 @@ input {
     box-sizing: border-box;
 }
 
-#results { margin-top: 25px; width: 100%; }
+#results, #spending-tracker { margin-top: 25px; width: 100%; }
 
 p { padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); display: flex; justify-content: space-between; }
 
 #fortification-box { color: #d4af37; font-weight: 600; }
 
-#export-btn {
-    margin-top: 20px;
-    padding: 12px;
+button {
     width: 100%;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 1px solid #d4af37;
+    padding: 12px;
+    background: #d4af37;
+    color: #1a252f;
+    border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: 0.3s;
+    font-weight: 600;
+    margin-top: 10px;
 }
 
-#export-btn:hover { background: #d4af37; color: #1a252f; }
+#item-list { list-style: none; padding: 0; margin-top: 20px; width: 100%; }
+#item-list li { padding: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.9rem; }
